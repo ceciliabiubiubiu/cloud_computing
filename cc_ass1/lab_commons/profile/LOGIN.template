@@ -1,0 +1,23 @@
+case $HOSTNAME in
+
+    soit-hdp-pro-*)
+        export JAVA_HOME=/usr/local/jdk1.8.0_40
+        export HADOOP_HOME=/usr/local/hadoop
+        export HADOOP_CONF_DIR=/usr/local/hadoop/etc/hadoop
+        export SPARK_HOME=/usr/local/spark
+        export PYSPARK_PYTHON=python3.3
+        export PYTHONHASHSEED=0
+        export SPARK_YARN_USER_ENV=PYTHONHASHSEED=0
+        export CLASSPATH=.:${HADOOP_HOME}/share/hadoop/common/*:${HADOOP_HOME}/share/hadoop/common/lib/*:/usr/local/hbase/lib/*:/labcommon/comp5338/usr/mongodb-linux-x86_64-2.6.3/lib/mongo-java-driver-2.12.3.jar:/labcommon/comp5338/usr/mongodb-linux-x86_64-2.6.3/lib/gson-2.2.4.jar:/labcommon/comp5338/usr/neo4j-community-2.1.3/lib/*
+        ;;
+    w*)
+        export ANT_HOME=/usr/local/apache-ant-1.10.5
+        export JAVA_HOME=/etc/alternatives/java_sdk
+        export HADOOP_HOME=/usr/local/hadoop-2.9.0
+        export SPARK_HOME=/usr/local/spark-2.2.1-bin-hadoop2.7
+        export SPARK_CONF_DIR=~/comp5349/spark-conf
+        export SPARK_LOG_DIR=~/comp5349/spark-logs
+        export PYSPARK_PYTHON=python3
+        ;;
+esac
+export PATH=.:${JAVA_HOME}/bin:${HADOOP_HOME}/bin:${ANT_HOME}/bin:${SPARK_HOME}/bin:/usr/local/anaconda3/bin:${PATH}
